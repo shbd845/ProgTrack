@@ -24,18 +24,22 @@
           </div>
         </div>
       </nav>
+      <div class="alert alert-info" role="alert">
+        A simple info alert—check it out! :{{success}}
+      </div>
       <div class="container my-3">
         <h2 class="text-center">
             Welcome to ProgTrack - ADD a TASK
         </h2>
-        <form>
+        <form action="/" method="post">
+            {% csrf_token %}
             <div class="mb-3">
-              <label for="exampleInputEmail1" class="form-label">Title</label>
-              <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <label for="title" class="form-label">Title</label>
+              <input type="text" class="form-control" id="title" name="title" aria-describedby="emailHelp">
             </div>
             <div class="mb-3">
-              <label for="exampleInputPassword1" class="form-label">Task Description</label>
-              <textarea class="form-control" id="" cols="30" rows="10"></textarea>
+              <label for="desc" class="form-label">Task Description</label>
+              <textarea class="form-control" id="desc" name="desc" cols="30" rows="10"></textarea>
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
           </form>
